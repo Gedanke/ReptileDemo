@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/basis/resource/iqiyi/iqiyi_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/basis/resource/jd/iqiyi_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

@@ -96,7 +96,7 @@ if __name__ == '__main__':
     get_page()
     '''csv'''
     print(data)
-    pandas.DataFrame(data).to_csv("resource/jd_data.csv", encoding="utf-8")
+    pandas.DataFrame(data).to_csv("resource/jd/jd_data.csv", encoding="utf-8")
     '''json'''
-    with open("resource/jd_data.json", "w", encoding="utf-8") as f:
+    with open("resource/jd/jd_data.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False))

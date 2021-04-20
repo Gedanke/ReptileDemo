@@ -4,9 +4,9 @@
 
 ## 查看网页
 
-在『京东商城』搜索框输入：笔记本
+搜索框输入：笔记本
 
-![](resource/ml_1.png)
+![](resource/jd/ml_1.png)
 
 链接如下
 
@@ -24,13 +24,13 @@ https://search.jd.com/Search?keyword=%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%
 
 ### 获取当前网页所有商品
 
-![](resource/ml_2.png)
+![](resource/jd/ml_2.png)
 
 可以看到在 class 标签 id=J_goodsList 里 ul -> li ,对应着所有商品列表
 
 ### 获取商品具体属性
 
-![](resource/ml_3.png)
+![](resource/jd/ml_3.png)
 
 每一个 li（商品）标签中，class=p-name p-name-type-2 对应商品标题，class=p-price 对应商品价格，class=p-commit 对应商品 ID（方便后面获取评论数）
 
@@ -112,13 +112,13 @@ shop =  戴尔京东自营官方旗舰店
 
 查看 network，找到如下数据包
 
-![](resource/ml_4.png)
+![](resource/jd/ml_4.png)
 
 将该 url 链接放到浏览器里面可以获取到商品评论数
 
-![](resource/ml_5.png)
+![](resource/jd/ml_5.png)
 
-![](resource/ml_6.png)
+![](resource/jd/ml_6.png)
 
 分析该 url
 
@@ -219,17 +219,17 @@ if __name__ == '__main__':
     print(data)
     pandas.DataFrame(data).to_csv("resource/jd_data.csv")
     '''json'''
-    with open("resource/jd_data.json", "w") as f:
+    with open("resource/jd/jd_data.json", "w") as f:
         f.write(json.dumps(data))
 ```
 
 将数据保存为 csv 文件
 
-![](resource/ml_7.png)
+![](resource/jd/ml_7.png)
 
 将数据保存为 json 文件
 
-![](resource/ml_8.png)
+![](resource/jd/ml_8.png)
 
 ## 翻页
 
@@ -237,9 +237,9 @@ if __name__ == '__main__':
 
 这里的下一页与平常看到的不一样
 
-![](resource/ml_9.png)
+![](resource/jd/ml_9.png)
 
-![](resource/ml_10.png)
+![](resource/jd/ml_10.png)
 
 可以发现
 
