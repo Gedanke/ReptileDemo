@@ -26,6 +26,7 @@ def gain_driver():
     driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         "source": js
     })
+    '''test'''
     # url = "https://bot.sannysoft.com/"
     # driver.get(url)
     #
