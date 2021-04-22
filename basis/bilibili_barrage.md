@@ -10,7 +10,7 @@
 https://live.bilibili.com/8604981
 ```
 
-![](resource/bilibili/bb_1.png)
+![](resource/bilibili/bilibili_1.png)
 
 房间号：8604981
 
@@ -22,7 +22,7 @@ https://live.bilibili.com/8604981
 https://api.live.bilibili.com/xlive/web-room/v1/dM/gethistory?roomid=8604981
 ```
 
-![](resource/bilibili/bb_2.png)
+![](resource/bilibili/bilibili_2.png)
 
 可以看到是 post 请求，经过验证只需要房间号就可以获取弹幕
 
@@ -1299,4 +1299,3 @@ for t in dict_word:
 当然我们也可以根据弹幕文本和 snownlp 库做更多的处理和分析
 
 [源码](bilibili_barrage.py)
-

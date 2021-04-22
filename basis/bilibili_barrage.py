@@ -85,7 +85,7 @@ def analysis_data():
             d["text_analysis"].append(-1)
             count2 += 1
     print("count1 : ", count1, "\t count2 : ", count2)
-    ''''''
+    '''analysis'''
     text = "".join(d["text"])
     s = snownlp.SnowNLP(text)
     dict_word = dict()
