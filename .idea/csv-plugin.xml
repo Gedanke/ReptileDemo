@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/basis/resource/qcwy/data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/basis/resource/qcwy/test.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
