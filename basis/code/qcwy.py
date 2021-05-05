@@ -84,7 +84,7 @@ def gain_data():
             data["Scope"].append(list_helper(order[3]))
             data["Detail"].append(d(".text").text().replace(" ", "", -1))
             data["Url"].append(d(".info span a").attr("href"))
-    pandas.DataFrame(data).to_csv("resource/qcwy/data.csv")
+    pandas.DataFrame(data).to_csv("../resource/qcwy/data.csv")
 
 
 def analysis_helper(salary: str):
@@ -235,7 +235,7 @@ def analysis_five(education: list):
 if __name__ == '__main__':
     """"""
     # gain_data()
-    d = pandas.read_csv("resource/qcwy/data.csv")
+    d = pandas.read_csv("../resource/qcwy/data.csv")
     job = list(d["Job"])
     location = list()
     salary = list()

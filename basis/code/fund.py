@@ -25,7 +25,7 @@ def gain_data():
     res = requests.get(url, headers=headers)
     res.encoding = "utf-8"
     '''json'''
-    with open("resource/fund/fund_data.json", "w", encoding="utf-8") as f:
+    with open("../resource/fund/fund_data.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(res.json(), ensure_ascii=False))
 
 
@@ -44,7 +44,7 @@ def test_data():
         print('date: ', d["date"], '\tnav: ', d["nav"], '\tpercentage: ', d["percentage"], '\tvalue: ', d["value"])
 
     '''json'''
-    with open("resource/fund/fund_data.json", "r") as f:
+    with open("../resource/fund/fund_data.json", "r") as f:
         data = json.load(f)["data"]["items"]
     l = len(data)
     now = data[l - 1]["date"].split("-")[1]
@@ -65,7 +65,7 @@ def deal_data():
     :return:
     """
     '''json'''
-    with open("resource/fund/fund_data.json", "r") as f:
+    with open("../resource/fund/fund_data.json", "r") as f:
         data = json.load(f)["data"]["items"]
     new_data = dict()
     l = len(data)
@@ -89,7 +89,7 @@ def deal_data():
             new_data[month]["percentage"].append(d["percentage"])
             new_data[month]["value"].append(d["value"])
     '''json'''
-    with open("resource/fund/data.json", "w", encoding="utf-8") as f:
+    with open("../resource/fund/data.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(new_data, ensure_ascii=False))
 
 
@@ -99,7 +99,7 @@ def analysis_one():
     :return:
     """
     '''json'''
-    with open("resource/fund/data.json", "r") as f:
+    with open("../resource/fund/data.json", "r") as f:
         data = json.load(f)
     month = list()
     month_start = list()
@@ -130,7 +130,7 @@ def analysis_two():
     :return:
     """
     '''json'''
-    with open("resource/fund/data.json", "r") as f:
+    with open("../resource/fund/data.json", "r") as f:
         data = json.load(f)
     month = list()
     month_high = list()
@@ -160,7 +160,7 @@ def analysis_three():
     :return:
     """
     '''json'''
-    with open("resource/fund/data.json", "r") as f:
+    with open("../resource/fund/data.json", "r") as f:
         data = json.load(f)
     month = list()
     month_value = list()
@@ -183,7 +183,7 @@ def analysis_four():
     :return:
     """
     '''json'''
-    with open("resource/fund/data.json", "r") as f:
+    with open("../resource/fund/data.json", "r") as f:
         data = json.load(f)
     month = list()
     month_value = list()

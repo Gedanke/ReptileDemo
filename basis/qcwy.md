@@ -331,4 +331,4 @@ def analysis_five(education: list):
 
 当然，我们也可以利用这些数据作其他的分析
 
-[源码](qcwy.py)
+[源码](code/qcwy.py)

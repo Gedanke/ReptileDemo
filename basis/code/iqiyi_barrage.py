@@ -112,7 +112,7 @@ if __name__ == '__main__':
     # load_xml_old()
     load_xml()
     '''csv'''
-    pandas.DataFrame(data).to_csv("resource/iqiyi/iqiyi_data.csv", encoding="utf-8")
+    pandas.DataFrame(data).to_csv("../resource/iqiyi/iqiyi_data.csv", encoding="utf-8")
     '''json'''
-    with open("resource/iqiyi/iqiyi_data.json", "w", encoding="utf-8") as f:
+    with open("../resource/iqiyi/iqiyi_data.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False))

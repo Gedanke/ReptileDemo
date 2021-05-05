@@ -17,14 +17,14 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/basis/resource/qcwy/data.csv">
+        <entry key="/basis/resource/jd/jd_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/basis/resource/qcwy/test.csv">
+        <entry key="/basis/resource/qcwy/data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

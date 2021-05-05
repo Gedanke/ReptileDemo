@@ -207,4 +207,4 @@ if __name__ == '__main__':
 
 ![](resource/iqiyi/ib_5.png)
 
-[源码](iqiyi_barrage.py)
+[源码](code/iqiyi_barrage.py)

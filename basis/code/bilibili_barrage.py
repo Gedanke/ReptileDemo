@@ -61,9 +61,9 @@ def save_msg():
         gain_data()
         i += 1
     '''csv'''
-    pandas.DataFrame(data).to_csv("resource/bilibili/bilibili_data.csv", encoding="utf-8")
+    pandas.DataFrame(data).to_csv("../resource/bilibili/bilibili_data.csv", encoding="utf-8")
     '''json'''
-    with open("resource/bilibili/bilibili_data.json", "w", encoding="utf-8") as f:
+    with open("../resource/bilibili/bilibili_data.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False))
 
 
@@ -72,7 +72,7 @@ def analysis_data():
 
     :return:
     """
-    with open("resource/bilibili/bilibili_data.json", "r") as f:
+    with open("../resource/bilibili/bilibili_data.json", "r") as f:
         d = json.load(f)
     d["text_analysis"] = list()
     count1, count2 = 0, 0

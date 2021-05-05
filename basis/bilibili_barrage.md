@@ -1298,4 +1298,4 @@ for t in dict_word:
 
 当然我们也可以根据弹幕文本和 snownlp 库做更多的处理和分析
 
-[源码](bilibili_barrage.py)
+[源码](code/bilibili_barrage.py)
