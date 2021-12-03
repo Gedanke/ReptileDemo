@@ -12,8 +12,6 @@ headers = {
     'Connection': 'keep-alive',
 }
 
-'''ip-api.com(很不准)'''
-
 
 def getIpapiIP(ip):
     """
@@ -34,9 +32,6 @@ def getIpapiIP(ip):
                  ip, longitude, latitude, country, region_name, city) \
              + '-' * 50
     return result
-
-
-'''ipstack.com'''
 
 
 def getIpstackIP(ip):
@@ -61,12 +56,9 @@ def getIpstackIP(ip):
     return result
 
 
-'''IP地址有效性验证'''
-
-
 def isIP(ip):
     """
-
+    IP地址有效性验证
     :param ip:
     :return:
     """
