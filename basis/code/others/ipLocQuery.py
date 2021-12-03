@@ -65,6 +65,11 @@ def getIpstackIP(ip):
 
 
 def isIP(ip):
+    """
+
+    :param ip:
+    :return:
+    """
     try:
         IPy.IP(ip)
         return True
