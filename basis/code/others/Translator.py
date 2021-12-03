@@ -1,14 +1,6 @@
-'''
-Function:
-	翻译软件V0.1.2,支持:
-		--百度翻译
-		--有道翻译
-		--谷歌翻译
-作者:
-	Python编程学习圈
-公众号:
-	Python编程学习圈
-'''
+# -*- coding: utf-8 -*-
+
+
 import re
 import js
 import sys
@@ -20,7 +12,14 @@ import requests
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-'''百度翻译类'''
+headers = {
+    'Accept-Encoding': 'gzip, deflate, sdch',
+    'Accept-Language': 'en-US,en;q=0.8',
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Connection': 'keep-alive',
+    'Cookie': ""
+}
 
 
 class baidu():
@@ -77,16 +76,9 @@ class baidu():
         return res.json()['lan']
 
 
-'''有道翻译类'''
-
-
 class youdao():
     def __init__(self):
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
-            'Referer': 'http://fanyi.youdao.com/',
-            'Cookie': 'OUTFOX_SEARCH_USER_ID=-481680322@10.169.0.83;'
-        }
+        """"""
         self.data = {
             'i': None,
             'from': 'AUTO',
@@ -95,32 +87,47 @@ class youdao():
             'client': 'fanyideskweb',
             'salt': None,
             'sign': None,
-            'ts': None,
+            'lts': None,
             'bv': None,
             'doctype': 'json',
             'version': '2.1',
             'keyfrom': 'fanyi.web',
             'action': 'FY_BY_REALTlME'
         }
-        self.url = 'http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule'
+        self.url = "https://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule"
 
     def translate(self, word):
-        ts = str(int(time.time() * 10000))
+        """
+        p.md5("new-fanyiweb" + l + "ydsecret://newfanyiweb.doctran/sign/0j9n2{3mLSN-$Lg]K4o0N2}" + o);
+        :param word:
+        :return:
+        """
+        ts = str(int(time.time() * 1000))
         salt = ts + str(int(random.random() * 10))
-        sign = 'fanyideskweb' + word + salt + '97_3(jkMYg@T[KZQmqjTK'
+        sign = 'fanyideskweb' + word + salt + 'Y2FYu%TNSbMCxc3t2u^XT'
         sign = hashlib.md5(sign.encode('utf-8')).hexdigest()
-        bv = '5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
+        bv = '5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
         bv = hashlib.md5(bv.encode('utf-8')).hexdigest()
         self.data['i'] = word
         self.data['salt'] = salt
         self.data['sign'] = sign
-        self.data['ts'] = ts
+        self.data['lts'] = ts
         self.data['bv'] = bv
-        res = requests.post(self.url, headers=self.headers, data=self.data)
+        cookie = "JSESSIONID=abcU00cZSsG1xfhRTi71x; OUTFOX_SEARCH_USER_ID=2127087027@10.169.0.83; OUTFOX_SEARCH_USER_ID_NCOO=371109680.2742406; ___rl__test__cookies=" + str(
+            str(int(ts) - random.randint(100, 30000)))
+        headers["Cookie"] = cookie
+        res = requests.post(self.url, headers=headers, data=self.data)
+        print(res.text)
         return [res.json()['translateResult'][0][0].get('tgt')]
 
 
-'''Google翻译类'''
+def js_time(date_time_obj):
+    """
+
+    :param date_time_obj:
+    :return:
+    """
+    return int(time.mktime(date_time_obj.timetuple()) * 1000)
 
 
 class google():
@@ -153,9 +160,6 @@ class google():
             if '\u4e00' <= w <= '\u9fa5':
                 return True
         return False
-
-
-'''简单的Demo'''
 
 
 class Translator(QWidget):
@@ -206,8 +210,8 @@ class Translator(QWidget):
         self.LineEdit2.setText(';'.join(results))
 
 
-'''run'''
 if __name__ == '__main__':
+    """"""
     app = QApplication(sys.argv)
     demo = Translator()
     demo.show()
